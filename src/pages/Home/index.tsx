@@ -3,22 +3,22 @@ import TrafficLight from '../../components/TrafficLight';
 import { Container } from '../../components/Container';
 import { Wrapper } from './atoms';
 
-export default function Home() {
-  const [color, setColor] = useState('red');
+const Home: React.FC = () => {
+  const [color, setColor] = useState<'red' | 'yellow' | 'green'>('red');
 
   useEffect(() => {
+    const listColors: { [key in typeof color]: typeof color } = {
+      red: 'yellow',
+      yellow: 'green',
+      green: 'red',
+    };
+
     const interval = setInterval(() => {
-      if (color === 'red') {
-        setColor('yellow');
-      } else if (color === 'yellow') {
-        setColor('green');
-      } else if (color === 'green') {
-        setColor('red');
-      }
+      setColor((prevColor) => listColors[prevColor]);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [color]);
+  }, []);
 
   return (
     <Container>
@@ -27,4 +27,6 @@ export default function Home() {
       </Wrapper>
     </Container>
   );
-}
+};
+
+export default Home;

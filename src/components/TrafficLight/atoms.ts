@@ -7,10 +7,7 @@ interface LightProps {
 export const TrafficLightIcon = styled.svg`
   height: 100px;
   width: 50vw;
+  x: 0px;
+  y: 0px;
 `;
 
-export const Ligth = styled.path<LightProps>`
-  fill-rule:evenodd;
-  clip-rule:evenodd;
-  fill: ${(props) => props.currentColor};
-`;
