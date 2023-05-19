@@ -1,0 +1,41 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "settings": {
+      "import/resolver": {
+          "node": {
+              "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+      }
+  },
+  "extends": ["airbnb", "airbnb/hooks", "plugin:@typescript-eslint/recommended", "prettier"],
+  "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"]}],
+      "no-use-before-define": "off",
+      "import/extensions": [
+          2,
+          {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never",
+              "png": "ignorePackages",
+              "ttf": "ignorePackages"
+          }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "import/no-extraneous-dependencies": "off",
+      "import/prefer-default-export": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "no-param-reassign": "off",
+      "react/jsx-props-no-spreading": "off",
+      "no-shadow": "off",
+      "react/require-default-props": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "jsx-a11y/label-has-associated-control": "off"
+  }
+}
